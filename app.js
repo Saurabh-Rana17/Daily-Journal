@@ -18,7 +18,7 @@ app.use(express.static("public"));
 
 app.set("view engine", "ejs");
 app.get("/", function (req, res) {
-  res.render("home");
+  res.render("home", { homeContent: homeStartingContent });
 });
 
 app.listen(3000, function () {
