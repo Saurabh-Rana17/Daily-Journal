@@ -30,7 +30,7 @@ app.get("/about", function (req, res) {
 app.get("/compose", function (req, res) {
   res.render("compose");
 });
-app.post("/", function (req, res) {
+app.post("/compose", function (req, res) {
   let i = req.body.i1;
   console.log(i);
 });
