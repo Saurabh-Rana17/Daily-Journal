@@ -22,10 +22,10 @@ app.get("/", function (req, res) {
   res.render("home", { homeContent: homeStartingContent });
 });
 app.get("/contact", function (req, res) {
-  res.render("home", { homeContent: homeStartingContent });
+  res.render("contact", { contactContent: contactContent });
 });
 app.get("/about", function (req, res) {
-  res.render("home", { homeContent: homeStartingContent });
+  res.render("about", { aboutContent: aboutContent });
 });
 
 app.listen(3000, function () {
