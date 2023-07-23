@@ -31,8 +31,8 @@ app.get("/compose", function (req, res) {
   res.render("compose");
 });
 app.post("/compose", function (req, res) {
-  let i = req.body.i1;
-  console.log(i);
+  const composeData = { title: req.body.i1, body: req.body.tarea };
+  console.log(composeData);
 });
 
 app.listen(3000, function () {
