@@ -44,10 +44,16 @@ app.get("/posts/:para", function (req, res) {
   let isIn = false;
   for (var i = 0; i < posts.length; i++) {
     if (_.lowerCase(posts[i].title) === param) {
+      var content = posts[i].body;
       isIn = true;
     }
   }
-  console.log(isIn, param, posts);
+  if (isIn === true) {
+    res.render("post", {
+      title: req.params.para,
+      content: content,
+    });
+  }
 });
 
 app.listen(3000, function () {
