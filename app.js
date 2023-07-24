@@ -38,7 +38,14 @@ app.post("/compose", function (req, res) {
   res.redirect("/");
 });
 app.get("/posts/:para", function (req, res) {
-  console.log(req.params.para);
+  let param = req.params.para;
+  let isIn = false;
+  for (var i = 0; i < posts.length; i++) {
+    if (posts[i].title === param) {
+      isIn = true;
+    }
+  }
+  console.log(isIn, param, posts);
 });
 
 app.listen(3000, function () {
