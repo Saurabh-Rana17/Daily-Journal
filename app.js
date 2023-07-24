@@ -40,9 +40,10 @@ app.post("/compose", function (req, res) {
 });
 app.get("/posts/:para", function (req, res) {
   let param = req.params.para;
+  param = _.lowerCase(param);
   let isIn = false;
   for (var i = 0; i < posts.length; i++) {
-    if (posts[i].title === param) {
+    if (_.lowerCase(posts[i].title) === param) {
       isIn = true;
     }
   }
